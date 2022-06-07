@@ -18,3 +18,4 @@ library
   hs-source-dirs:  src
   exposed-modules:
     Amazonka.Types
+  build-depends:   bytestring

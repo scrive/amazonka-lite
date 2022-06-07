@@ -5,6 +5,7 @@
 
 module Amazonka.Types where
 
+import Data.ByteString.Builder
 import GHC.Generics
 
 data LogLevel
@@ -17,3 +18,9 @@ data LogLevel
   | -- | Includes potentially sensitive signing metadata, and non-streaming response bodies.
     Trace
   deriving stock (Eq, Ord, Enum, Show, Generic)
+
+type ByteStringBuilder = Data.ByteString.Builder.Builder
+
+-- | A function threaded through various request and serialisation routines
+-- to log informational and debug messages.
+type Logger = LogLevel -> ByteStringBuilder -> IO ()
