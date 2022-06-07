@@ -1,6 +1,6 @@
 cabal-version:      3.0
-name:               amazonka-lite
-version:            0.1
+name:               amazonka-core
+version:            2.0
 
 common base
   default-language:   Haskell2010
