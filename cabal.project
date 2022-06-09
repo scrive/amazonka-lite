@@ -1,2 +1,10 @@
 packages:
-    lib/amazonka-core
+    core/
+    amazonka/
+    amazonka-s3/
+    test/
+
+constraints:
+    aeson <2.0
+  , unliftio ==0.2.14
+  , unliftio-core ==0.1.2.0
