@@ -28,6 +28,7 @@ module Network.AWS.Data.Text
     , showText
     ) where
 
+import qualified Data.Aeson.Key                    as Aeson
 import           Data.Attoparsec.Text              (Parser)
 import qualified Data.Attoparsec.Text              as A
 import           Data.ByteString                   (ByteString)
@@ -68,6 +69,9 @@ takeText = A.takeText
 
 class FromText a where
     parser :: Parser a
+
+instance FromText Aeson.Key where
+    parser = Aeson.fromText <$> A.takeText
 
 instance FromText Text where
     parser = A.takeText

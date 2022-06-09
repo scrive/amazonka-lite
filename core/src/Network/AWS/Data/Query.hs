@@ -36,6 +36,7 @@ import           Network.AWS.Data.ByteString
 import           Network.AWS.Data.Text
 import           Network.HTTP.Types.URI      (urlEncode)
 import           Numeric.Natural
+import qualified Data.Aeson.Key              as Aeson
 
 data QueryString
     = QList  [QueryString]
@@ -136,6 +137,9 @@ class ToQuery a where
 
     default toQuery :: ToText a => a -> QueryString
     toQuery = toQuery . toText
+
+instance ToQuery Aeson.Key where
+    toQuery = toQuery . Aeson.toText
 
 instance ToQuery QueryString where
     toQuery = id
