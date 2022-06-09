@@ -28,7 +28,7 @@ import           Data.ByteString              (ByteString)
 import           Data.ByteString.Builder      (Builder)
 import qualified Data.ByteString.Char8        as BS8
 import qualified Data.ByteString.Lazy         as LBS
-import qualified Data.ByteString.Lazy.Builder as Build
+import qualified Data.ByteString.Builder      as Build
 import           Data.CaseInsensitive         (CI)
 import qualified Data.CaseInsensitive         as CI
 import           Data.Char
@@ -38,6 +38,7 @@ import           Network.AWS.Data.Text
 import           Network.HTTP.Types
 import           Numeric
 import           Numeric.Natural
+import qualified Data.Aeson.Key               as Aeson
 
 type LazyByteString = LBS.ByteString
 
@@ -53,6 +54,7 @@ class ToByteString a where
     default toBS :: ToText a => a -> ByteString
     toBS = Text.encodeUtf8 . toText
 
+instance ToByteString Aeson.Key      where toBS = toBS . Aeson.toText
 instance ToByteString ByteString     where toBS = id
 instance ToByteString Builder        where toBS = toBS . Build.toLazyByteString
 instance ToByteString LazyByteString where toBS = LBS.toStrict

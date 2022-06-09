@@ -25,6 +25,7 @@ module Network.AWS.Data.Map
 
 import           Control.DeepSeq
 import           Data.Aeson
+import qualified Data.Aeson.Key              as Aeson
 import           Data.Bifunctor
 import qualified Data.ByteString             as BS
 import qualified Data.CaseInsensitive        as CI
@@ -80,11 +81,11 @@ instance (Eq k, Hashable k, FromText k, FromJSON v) => FromJSON (Map k v) where
     parseJSON = withObject "HashMap" (fmap fromList . traverse f . toList)
       where
         f (k, v) = (,)
-            <$> either fail return (fromText k)
+            <$> either fail return (fromText $ Aeson.toText k)
             <*> parseJSON v
 
 instance (Eq k, Hashable k, ToText k, ToJSON v) => ToJSON (Map k v) where
-    toJSON = Object . fromList . map (bimap toText toJSON) . toList
+    toJSON = Object . fromList . map (bimap (Aeson.fromText . toText) toJSON) . toList
 
 instance (Eq k, Hashable k, ToByteString k, ToText v) => ToHeader (Map k v) where
     toHeader p = map (bimap k v) . toList

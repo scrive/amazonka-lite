@@ -22,14 +22,13 @@ module Network.AWS.Data.Body where
 
 import           Control.Monad.Trans.Resource
 import           Data.Aeson
+import           Data.Aeson.KeyMap
 import qualified Data.ByteString              as BS
 import           Data.ByteString.Builder      (Builder)
 import qualified Data.ByteString.Char8        as BS8
 import qualified Data.ByteString.Lazy         as LBS
 import qualified Data.ByteString.Lazy.Char8   as LBS8
 import           Data.Conduit
-import           Data.HashMap.Strict          (HashMap)
-import           Data.Monoid
 import           Data.String
 import           Data.Text                    (Text)
 import qualified Data.Text.Encoding           as Text
@@ -194,7 +193,7 @@ instance ToHashedBody Value          where toHashed = toHashed . encode
 instance ToHashedBody Element        where toHashed = toHashed . encodeXML
 instance ToHashedBody QueryString    where toHashed = toHashed . toBS
 
-instance ToHashedBody (HashMap Text Value) where
+instance ToHashedBody (KeyMap Value) where
     toHashed = toHashed . Object
 
 -- | Anything that can be converted to a streaming request 'Body'.
@@ -217,7 +216,7 @@ instance ToBody LBS.ByteString
 instance ToBody ByteString
 instance ToBody Text
 instance ToBody LText.Text
-instance ToBody (HashMap Text Value)
+instance ToBody (KeyMap Value)
 instance ToBody Value
 instance ToBody Element
 instance ToBody QueryString
