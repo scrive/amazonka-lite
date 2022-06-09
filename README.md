@@ -1,8 +1,18 @@
 # Amazonka
 
-[![Build Status](https://img.shields.io/travis/brendanhay/amazonka/develop.svg?maxAge=2592000)](https://travis-ci.org/brendanhay/amazonka)
-[![Hackage Version](https://img.shields.io/hackage/v/amazonka.svg)](http://hackage.haskell.org/package/amazonka)
-[![Gitter Chat](https://img.shields.io/gitter/room/brendanhay/amazonka.js.svg?maxAge=2592000)](https://gitter.im/brendanhay/amazonka)
+## Scrive Update
+
+The original code version is the same as of released amazonka 1.6.1.
+
+https://github.com/brendanhay/amazonka/commit/d6120081222808ca6173b28b07d13b1721a7fc07
+
+That commit corresponds to the latest master branch of that repo. Then they started
+using "main" as the main development branch.
+
+This repo contains a lightweight version of amazonka based on 1.6.1 with necessary
+fixes for GHC 9.2.x.
+
+## Contents
 
 * [Description](#description)
 * [Documentation](#documentation)
@@ -11,7 +21,6 @@
 * [Contribute](#contribute)
     - [Package Names](#package-names)
 * [Licence](#licence)
-
 
 ## Description
 
