@@ -30,6 +30,8 @@ description:
     .
     GHC 7.8.4 and higher is officially supported.
 
+tested-with: GHC ==8.10.7 || ==9.2.2
+
 source-repository head
     type:              git
     location:          git://github.com/scrive/amazonka-lite.git

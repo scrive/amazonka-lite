@@ -21,6 +21,8 @@ description:
     downstream Amazonka libraries, only, and as such is not suitable
     for use in non-Amazonka projects.
 
+tested-with: GHC ==8.10.7 || ==9.2.2
+
 source-repository head
     type:              git
     location:          git://github.com/scrive/amazonka-lite.git

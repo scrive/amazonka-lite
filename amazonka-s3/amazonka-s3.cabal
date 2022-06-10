@@ -28,6 +28,8 @@ description:
     See "Network.AWS.S3" or <https://aws.amazon.com/documentation/ the AWS documentation>
     to get started.
 
+tested-with: GHC ==8.10.7 || ==9.2.2
+
 source-repository head
     type:              git
     location:          git://github.com/scrive/amazonka-lite.git
