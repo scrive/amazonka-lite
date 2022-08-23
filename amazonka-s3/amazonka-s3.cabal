@@ -28,7 +28,7 @@ description:
     See "Network.AWS.S3" or <https://aws.amazon.com/documentation/ the AWS documentation>
     to get started.
 
-tested-with: GHC ==8.10.7 || ==9.2.2
+tested-with: GHC ==8.10.7 || ==9.2.4
 
 source-repository head
     type:              git
