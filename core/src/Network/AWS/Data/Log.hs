@@ -104,17 +104,9 @@ instance ToLog RequestBody where
         RequestBodyBuilder     n _ -> " <builder:" <> build n <> ">"
         RequestBodyStream      n _ -> " <stream:"  <> build n <> ">"
 
-        RequestBodyLBS lbs
-            | n <= 4096            -> build lbs
-            | otherwise            -> " <lazy:" <> build n <> ">"
-          where
-            n = LBS.length lbs
+        RequestBodyLBS lbs         -> " <lazy:" <> build (LBS.length lbs) <> ">"
 
-        RequestBodyBS bs
-            | n <= 4096            -> build bs
-            | otherwise            -> " <strict:" <> build n <> ">"
-          where
-            n = BS.length bs
+        RequestBodyBS bs           -> " <strict:" <> build (BS.length bs) <> ">"
 
         _                          -> " <chunked>"
 
