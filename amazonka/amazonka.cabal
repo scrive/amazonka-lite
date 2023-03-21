@@ -30,7 +30,7 @@ description:
     .
     GHC 7.8.4 and higher is officially supported.
 
-tested-with: GHC ==8.10.7 || ==9.2.4
+tested-with: GHC ==8.10.7 || ==9.2.4 || ==9.4.4
 
 source-repository head
     type:              git
