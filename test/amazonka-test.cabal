@@ -21,7 +21,7 @@ description:
     downstream Amazonka libraries, only, and as such is not suitable
     for use in non-Amazonka projects.
 
-tested-with: GHC ==8.10.7 || ==9.2.4
+tested-with: GHC ==8.10.7 || ==9.2.4 || ==9.4.4
 
 source-repository head
     type:              git
