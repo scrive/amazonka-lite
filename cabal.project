@@ -1,9 +1,1 @@
-packages:
-    core/
-    amazonka/
-    amazonka-s3/
-    test/
-
-allow-newer:
-    amazonka-core:base
-  , amazonka-core:aeson
+packages: */*.cabal

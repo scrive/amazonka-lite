@@ -7,9 +7,8 @@
 
 
 ## Version
-
-`1.6.1`
-
+ 
+`2.0` - Derived from API version @2006-03-01@ of the AWS service descriptions, licensed under Apache 2.0.
 
 ## Description
 
@@ -26,7 +25,7 @@ de/serialisation into more palatable Haskell values.
 The provided lenses should be compatible with any of the major lens libraries
 [lens](http://hackage.haskell.org/package/lens) or [lens-family-core](http://hackage.haskell.org/package/lens-family-core).
 
-See [Network.AWS.S3](http://hackage.haskell.org/package/amazonka-s3/docs/Network-AWS-S3.html)
+See [Amazonka.S3](http://hackage.haskell.org/package/amazonka-s3/docs/Amazonka-S3.html)
 or [the AWS documentation](https://aws.amazon.com/documentation/) to get started.
 
 

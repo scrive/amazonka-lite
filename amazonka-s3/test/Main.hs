@@ -2,20 +2,22 @@
 
 -- |
 -- Module      : Main
--- Copyright   : (c) 2013-2018 Brendan Hay
+-- Copyright   : (c) 2013-2023 Brendan Hay
 -- License     : Mozilla Public License, v. 2.0.
--- Maintainer  : Brendan Hay <brendan.g.hay+amazonka@gmail.com>
+-- Maintainer  : Brendan Hay
 -- Stability   : auto-generated
 -- Portability : non-portable (GHC extensions)
---
 module Main (main) where
 
+import Test.Amazonka.S3
+import Test.Amazonka.S3.Internal
 import Test.Tasty
-import Test.AWS.S3
-import Test.AWS.S3.Internal
 
 main :: IO ()
-main = defaultMain $ testGroup "S3"
-    [ testGroup "tests"    tests
-    , testGroup "fixtures" fixtures
-    ]
+main =
+  defaultMain $
+    testGroup
+      "S3"
+      [ testGroup "tests" tests,
+        testGroup "fixtures" fixtures
+      ]

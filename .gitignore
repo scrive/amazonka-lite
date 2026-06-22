@@ -1,1 +1,58 @@
-/dist-newstyle/
+# OSX
+.DS_Store
+
+# Emacs/Vim
+*~
+*#
+.#*
+.*.sw[a-z]
+*.un~
+*.org
+.projectile
+
+# Nix
+result*
+
+# Certificates
+*.pem
+*.key
+*.secret
+*.sec
+*.asc
+
+# Archives
+*.zip
+*.gz
+*.tar
+*.bzip2
+*.xz
+
+# Profiling
+*.prof
+*.aux
+*.hp
+*.ps
+*.pdf
+
+# Cabal
+cabal.project.local*
+/dist-newstyle
+dist*
+.ghc*
+
+# Curl
+.cookies
+*.log
+
+# Direnv
+/.direnv
+.envrc.local
+
+# Stack
+.stack-work
+
+# Git Hooks
+.pre-commit-config.yaml
+
+# Botocore
+/vendor/botocore
